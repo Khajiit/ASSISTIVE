@@ -79,12 +79,18 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controller.hpp" />
+    <ClInclude Include="Gesture.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="VideoProcessor.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assistive.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Gesture.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="VideoProcessor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
