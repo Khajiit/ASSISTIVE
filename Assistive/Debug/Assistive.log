@@ -1,0 +1,20 @@
+﻿Build started 2012-05-06 19:10:37.
+     1>Project "D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Assistive.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Assistive.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Debug\Assistive.unsuccessfulbuild".
+         Touching "Debug\Assistive.lastbuildstate".
+     1>Done Building Project "D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Assistive.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07
