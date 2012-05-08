@@ -1,12 +1,13 @@
-﻿Build started 2012-05-06 19:28:51.
+﻿Build started 2012-05-08 23:06:25.
      1>Project "D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Assistive.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Assistive.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Controller.cpp Gesture.cpp VideoProcessor.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Assistive.cpp VideoProcessor.cpp
          VideoProcessor.cpp
-         Gesture.cpp
-         Controller.cpp
+         Generating Code...
+         Compiling...
+         Assistive.cpp
          Generating Code...
        ManifestResourceCompile:
          All outputs are up-to-date.
@@ -30,4 +31,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.55
+Time Elapsed 00:00:03.00
