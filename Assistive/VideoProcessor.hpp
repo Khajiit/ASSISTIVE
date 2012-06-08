@@ -25,12 +25,16 @@ public:
 	void processFrame(Mat image);
 	RotatedRect getTrackBox();
 	Rect getSelection();
+	Rect getLeftSelection();
 	bool isGestureReady();
+	bool isLeftGestureReady();
+	Gesture getLeftGesture();
 	Gesture getGesture();
 
 private:
 	bool mFirstFrame;
 	Rect mSelection;
+	Rect mLeftSelection;
 	RotatedRect mTrackBox;
 	Mat mHist;
 	Mat backproj;
@@ -38,7 +42,11 @@ private:
 	Rect trackWindow;
 	bool mGestureReady;
 	Gesture mGesture;
+	Gesture mLeftGesture;
 	vpDirection mMovementDirection;
 	RotatedRect mFixedTrackBox;
+	int frameNo;
+	bool mLeftGestureActive;
+	bool mLeftGestureReady;
 };
 

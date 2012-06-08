@@ -14,6 +14,14 @@ VideoProcessor::VideoProcessor(void)
 	mSelection.y = 303;
 	mSelection.width = 44;
 	mSelection.height = 44;
+
+	mLeftSelection.x = 306;
+	mLeftSelection.y = 21;
+	mLeftSelection.width = 140;
+	mLeftSelection.height = 100;
+
+	frameNo = 0;
+	mLeftGestureActive = false;
 }
 
 
@@ -23,6 +31,7 @@ VideoProcessor::~VideoProcessor(void)
 
 void VideoProcessor::processFrame(Mat image)
 {
+	frameNo++;
 	//Mat hsv, hue, mask;
 	//TODO: przenieœæ to do jakiegoœ configa
 	int vmin = 10, vmax = 256, smin = 30, hsize = 16;
@@ -53,6 +62,29 @@ void VideoProcessor::processFrame(Mat image)
 
 	calcBackProject(&hue, 1, 0, mHist, backproj, &phranges);
     backproj &= mask;
+
+	mLeftGestureReady = false;
+
+	Mat myBP;
+	//cvtColor(backproj, myBP, CV_HSV2BGR);
+	backproj.copyTo(myBP);
+	myBP = backproj(mLeftSelection);
+	double s = sum(myBP)[0];
+	if(s < 700000) 
+	{
+		mLeftGestureActive = true;
+		//std::cout << frameNo << " BOOM " << s << std::endl;
+	} else 
+	{
+		//jezeli by³ aktywy to znaczy, ¿e to koniec zaciskania rêki
+		if(mLeftGestureActive)
+		{
+			mLeftGesture.type = Gesture::GESTURE_LHAND_MOVE;
+			mLeftGestureReady = true;
+		}
+		mLeftGestureActive = false;
+	}
+
     mTrackBox = CamShift(backproj, trackWindow,
                         TermCriteria( CV_TERMCRIT_EPS | CV_TERMCRIT_ITER, 10, 1 ));
 
@@ -88,56 +120,6 @@ void VideoProcessor::processFrame(Mat image)
 		mGesture.type = Gesture::GESTURE_UNKNOWN;
 	}
 
-	/*
-	//je¿eli obiekt jest w spoczynku zapamiêtuje jego po³o¿enie jako po³o¿enie odniesienia
-	if(mMovementDirection == DIR_FIX_POS)
-	{
-		std::cout << "Setting fixed track box" << std::endl;
-		mFixedTrackBox = mTrackBox;
-		mMovementDirection = DIR_NONE;
-	}
-
-	int delta = mFixedTrackBox.center.y - mTrackBox.center.y;
-	std::cout << "Delta = " << delta << std::endl;
-	if(abs(delta) >= minDelta)
-	{
-		if(delta > 0)
-		{
-			//rêka w lewo
-			if(mMovementDirection == DIR_RIGHT)
-			{
-				mGesture.type = Gesture::GESTURE_RHAND_RIGHT;
-				mMovementDirection = DIR_FIX_POS;
-				mGestureReady = true;
-			}
-			else
-			{
-				mMovementDirection = DIR_LEFT;
-			}
-		} 
-		else 
-		{
-			//rêka w prawo
-			if(mMovementDirection == DIR_LEFT)
-			{
-				mGesture.type = Gesture::GESTURE_RHAND_LEFT;
-				mMovementDirection = DIR_FIX_POS;
-				mGestureReady = true;
-			}
-			else
-			{
-				mMovementDirection = DIR_RIGHT;
-			}
-		}
-	}
-
-	if(abs(abs(mLastDelta) - abs(delta)) >= deltaToFix)
-	{
-		mMovementDirection = DIR_FIX_POS;
-	}
-
-	mLastDelta = delta;
-	*/
 }
 
 /**
@@ -153,12 +135,27 @@ Rect VideoProcessor::getSelection()
 	return mSelection;
 }
 
+Rect VideoProcessor::getLeftSelection()
+{
+	return mLeftSelection;
+}
+
 bool VideoProcessor::isGestureReady()
 {
 	return mGestureReady;
 }
 
+bool VideoProcessor::isLeftGestureReady()
+{
+	return mLeftGestureReady;
+}
+
 Gesture VideoProcessor::getGesture()
 {
 	return mGesture;
+}
+
+Gesture VideoProcessor::getLeftGesture()
+{
+	return mLeftGesture;
 }

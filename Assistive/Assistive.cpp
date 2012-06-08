@@ -90,8 +90,15 @@ int main(int argc, char* argv[])
 			cout << "GESTURE FOUND " << gesture.type << endl;
 		}
 
+		if(videoProcessor.isLeftGestureReady())
+		{
+			Gesture gesture = videoProcessor.getLeftGesture();
+			cout << "GESTURE FOUND " << gesture.type << endl;
+		}
+
 		ellipse( image, videoProcessor.getTrackBox(), Scalar(0,0,255), 3, CV_AA );
 		rectangle(image, videoProcessor.getSelection(), Scalar(255, 0, 0), 3, CV_AA);
+		rectangle(image, videoProcessor.getLeftSelection(), Scalar(0, 255, 0), 3, CV_AA);
 		imshow(PREVIEW_WINDOW_ID, image);
 		char c = (char)waitKey(5);
 		if(c == 27)

@@ -7,10 +7,12 @@
   </PropertyGroup>
   <PropertyGroup>
     <LibraryPath>$(OPENCV_HOME)\lib;$(LibraryPath)</LibraryPath>
+    <LinkIncremental>
+    </LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>opencv_core220.lib;opencv_highgui220.lib;opencv_imgproc220.lib;opencv_features2d220.lib;opencv_calib3d220.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_core220.lib;opencv_highgui220.lib;opencv_imgproc220.lib;opencv_features2d220.lib;opencv_calib3d220.lib;opencv_video220.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
