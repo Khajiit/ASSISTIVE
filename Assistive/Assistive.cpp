@@ -11,6 +11,7 @@
 #include <ctype.h>
 
 #include "VideoProcessor.hpp"
+#include "StateKeeper.hpp"
 
 using namespace cv;
 using namespace std;
@@ -70,7 +71,8 @@ int main(int argc, char* argv[])
 	cv::namedWindow(PREVIEW_WINDOW_ID);
 
 	VideoProcessor videoProcessor;
-
+	StateKeeper stateKeeper;
+	cout << stateKeeper.getMainPos() << ":" << stateKeeper.getSubPos() << endl;
 	//pêtla odczytywania klatek i wysy³ania ich do przetwarzania
 	for(;;)
 	{
@@ -88,12 +90,52 @@ int main(int argc, char* argv[])
 		{
 			Gesture gesture = videoProcessor.getGesture();
 			cout << "GESTURE FOUND " << gesture.type << endl;
+			switch(gesture.type)
+			{
+			case Gesture::GESTURE_RHAND_LEFT:
+				cout << "Keeper: Moving back";
+				stateKeeper.moveBackwards();
+				cout << stateKeeper.getMainPos() << ":" << stateKeeper.getSubPos() << endl;
+
+				break;
+			case Gesture::GESTURE_RHAND_RIGHT:
+				cout << "Keeper: Moving forward" << endl;
+				stateKeeper.moveForward();
+				cout << stateKeeper.getMainPos() << ":" << stateKeeper.getSubPos() << endl;
+				break;
+			default:
+				cout << "Unknown" << endl;
+			}
 		}
 
 		if(videoProcessor.isLeftGestureReady())
 		{
 			Gesture gesture = videoProcessor.getLeftGesture();
 			cout << "GESTURE FOUND " << gesture.type << endl;
+			State* state = stateKeeper.GetState();
+			switch(gesture.type)
+			{
+			case Gesture::GESTURE_LHAND_MOVE:
+				if(state->getSubPos() == 1)
+				{
+					cout << "Keeper: Moving up" << endl;
+					stateKeeper.moveUp();
+				}
+				else if(state->getSubPos() == 0)
+				{
+					cout << "Keeper: Moving down" << endl;
+					stateKeeper.moveDown();
+				}
+				else
+				{
+					cout << "Keeper: Executing action" << endl;
+					stateKeeper.GetState()->func();
+				}
+				break;
+			default:
+				cout << "Unknown" << endl;
+				break;
+			}
 		}
 
 		ellipse( image, videoProcessor.getTrackBox(), Scalar(0,0,255), 3, CV_AA );

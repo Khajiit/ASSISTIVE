@@ -1,12 +1,11 @@
-﻿Build started 2012-06-08 14:47:59.
+﻿Build started 2012-06-09 18:17:27.
      1>Project "D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Assistive.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Debug\Assistive.unsuccessfulbuild".
+         Creating "Debug\Assistive.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt VideoProcessor.cpp
-         VideoProcessor.cpp
-     1>d:\my dropbox\projects\cpp\assistive\assistive\videoprocessor.cpp(10): warning C4482: nonstandard extension used: enum 'vpDirection' used in qualified name
-     1>d:\my dropbox\projects\cpp\assistive\assistive\videoprocessor.cpp(99): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt StateKeeper.cpp
+         StateKeeper.cpp
+     1>d:\my dropbox\projects\cpp\assistive\assistive\statekeeper.cpp(153): warning C4715: 'StateKeeper::findState' : not all control paths return a value
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -14,6 +13,9 @@
          Debug\Assistive.obj
          Debug\Controller.obj
          Debug\Gesture.obj
+         Debug\State.obj
+         Debug\stateFunDeclarations.obj
+         Debug\StateKeeper.obj
          Debug\stdafx.obj
          Debug\VideoProcessor.obj
        Manifest:
@@ -29,4 +31,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.57
+Time Elapsed 00:00:01.86
