@@ -1,3 +1,15 @@
+/************************************************************************************/
+/*									State.cpp								*/
+/************************************************************************************/
+/* Autorzy:		Marcin Marzyñski, Daniel Jagielski, Tomasz Kmiecik					*/
+/* Kierunek:	III rok Informatyka Stosowana, EAIiE, AGH							*/
+/* Data modyfikacji: 10-06-2012														*/
+/************************************************************************************/
+/*																					*/
+/* Klasa przechowuj¹ca stan dla maszyny stanów StateKeeper. Posiada informacjê		*/
+/* o powi¹zanej ikonce menu dla tego stanu oraz o funkcji, któr¹ nalezy wykonaæ przy*/
+/* aktywacji tego stanu																*/
+/************************************************************************************/
 #include "State.hpp"
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>

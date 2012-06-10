@@ -1,3 +1,17 @@
+/************************************************************************************/
+/*									VideProcessor.cpp								*/
+/************************************************************************************/
+/* Autorzy:		Marcin Marzyñski, Daniel Jagielski, Tomasz Kmiecik					*/
+/* Kierunek:	III rok Informatyka Stosowana, EAIiE, AGH							*/
+/* Data modyfikacji: 10-06-2012														*/
+/************************************************************************************/
+/*																					*/
+/* Klasa odpowiedzialna za œledzenie obiektów na obrazie i rozpoznawanie konkretnych*/
+/* gestów. Wykorzystuje bibliotekê OpenCV do przetwarzania obrazów.					*/
+/*																					*/
+/* Do œledzenia prawej rêki wykorzystywany jest algorytm CamShift (implementacja	*/
+/* z OpenCV). Gesty lewej rêki liczone s¹ na podstawie backprojection obrazu		*/
+/************************************************************************************/
 #include "VideoProcessor.hpp"
 #include <iostream>
 

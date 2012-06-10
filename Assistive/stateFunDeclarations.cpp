@@ -1,3 +1,13 @@
+/************************************************************************************/
+/*									stateFunDeclarations.cpp						*/
+/************************************************************************************/
+/* Autorzy:		Marcin Marzyñski, Daniel Jagielski, Tomasz Kmiecik					*/
+/* Kierunek:	III rok Informatyka Stosowana, EAIiE, AGH							*/
+/* Data modyfikacji: 10-06-2012														*/
+/************************************************************************************/
+/*																					*/
+/* Zbiór funkcji podpinanych pod stany (pozycje menu) w celach prezentacyjnych		*/
+/************************************************************************************/
 #include "stateFunDeclarations.hpp"
 #include <iostream>
 

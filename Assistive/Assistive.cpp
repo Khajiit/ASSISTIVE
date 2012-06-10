@@ -1,6 +1,17 @@
-// Assistive.cpp : Defines the entry point for the console application.
-//
-
+/************************************************************************************/
+/*									Assistive.cpp									*/
+/************************************************************************************/
+/* Autorzy:		Marcin Marzyñski, Daniel Jagielski, Tomasz Kmiecik					*/
+/* Kierunek:	III rok Informatyka Stosowana, EAIiE, AGH							*/
+/* Data modyfikacji: 10-06-2012														*/
+/************************************************************************************/
+/*																					*/
+/* G³ówna klasa aplikacji, jednoczeœnie jej kontroler.								*/
+/* Inicjalizuje wszystkie obiekty, w tym okna aplikacji. Nastêpnie odczytuje kolejne*/
+/* ramki z filmu i przekazuje je do obiektu VideoProcessor, który odpowiedzialny	*/
+/* jest za œledzenie obiektów na ekranie i rozpoznawanie wykonywanych przez nie		*/
+/* gestów.																			*/
+/************************************************************************************/
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/video/tracking.hpp>
