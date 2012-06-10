@@ -24,7 +24,8 @@ using namespace std;
 	}
 }*/
 
-const String PREVIEW_WINDOW_ID = "Preview";
+const static String PREVIEW_WINDOW_ID = "Preview";
+const static String MENU_WINDOW_ID = "Menu";
 Rect selection;
 Point origin;
 bool selectObject = false;
@@ -68,11 +69,14 @@ int main(int argc, char* argv[])
         return 0;
 	}
 
+	//utworzenie okienek
 	cv::namedWindow(PREVIEW_WINDOW_ID);
+	cv::namedWindow(MENU_WINDOW_ID);
 
 	VideoProcessor videoProcessor;
 	StateKeeper stateKeeper;
 	cout << stateKeeper.getMainPos() << ":" << stateKeeper.getSubPos() << endl;
+
 	//pêtla odczytywania klatek i wysy³ania ich do przetwarzania
 	for(;;)
 	{
@@ -96,7 +100,6 @@ int main(int argc, char* argv[])
 				cout << "Keeper: Moving back";
 				stateKeeper.moveBackwards();
 				cout << stateKeeper.getMainPos() << ":" << stateKeeper.getSubPos() << endl;
-
 				break;
 			case Gesture::GESTURE_RHAND_RIGHT:
 				cout << "Keeper: Moving forward" << endl;
@@ -137,6 +140,9 @@ int main(int argc, char* argv[])
 				break;
 			}
 		}
+
+		//wyswietlenie stanu menu
+		imshow(MENU_WINDOW_ID, stateKeeper.GetState()->getImg());
 
 		ellipse( image, videoProcessor.getTrackBox(), Scalar(0,0,255), 3, CV_AA );
 		rectangle(image, videoProcessor.getSelection(), Scalar(255, 0, 0), 3, CV_AA);

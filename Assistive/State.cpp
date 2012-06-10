@@ -1,5 +1,6 @@
 #include "State.hpp"
-
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 State::State(void)
 {
@@ -29,12 +30,14 @@ int State::getSubPos() {
 }*/
 
 //settery
-void State::setMainPos(int newvalue) {
+void State::setMainPos(int newvalue) 
+{
 	mainPos = newvalue;
 }
 
 
-void State::setSubPos(int newvalue) {
+void State::setSubPos(int newvalue) 
+{
 	 subPos = newvalue;
 }
 
@@ -42,9 +45,21 @@ void State::setSubPos(int newvalue) {
 	func = newvalue;
 }*/
 
-void State::setname(std::string newname){
+void State::setname(std::string newname)
+{
 	name = newname;
 }
+
+void State::setImg(std::string path)
+{
+	img = cv::imread(path);
+}
+
+cv::Mat State::getImg()
+{
+	return img;
+}
+
 /*
 State& State::operator= (State const& ex)
 {

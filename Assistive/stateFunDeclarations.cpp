@@ -18,5 +18,20 @@ void printPrevSong()
 
 void printPauseSong()
 {
-	std::cout << "Akcja: pauzuj piosenke" << std::endl;
+	std::cout << "Akcja: pauza/play" << std::endl;
+}
+
+void printEclipse()
+{
+	std::cout << "Akcja: uruchamiam Eclipse" << std::endl;
+}
+
+void printChrome()
+{
+	std::cout << "Akcja: uruchamiam Chrome" << std::endl;
+}
+
+void printCalc()
+{
+	std::cout << "Akcja: uruchamiam kalkulator" << std::endl;
 }
