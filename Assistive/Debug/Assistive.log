@@ -1,16 +1,18 @@
-﻿Build started 2012-06-10 13:34:35.
+﻿Build started 2012-06-10 15:38:54.
      1>Project "D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Assistive.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Assistive.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Assistive.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Assistive.cpp State.cpp StateKeeper.cpp
+         StateKeeper.cpp
+         State.cpp
          Assistive.cpp
+         Generating Code...
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Debug\Assistive.exe" /INCREMENTAL /NOLOGO opencv_core220d.lib opencv_highgui220d.lib opencv_imgproc220d.lib opencv_features2d220d.lib opencv_calib3d220d.lib opencv_video220d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Assistive.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Debug\Assistive.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\My Dropbox\Projects\Cpp\ASSISTIVE\Assistive\Debug\Assistive.lib" /MACHINE:X86 Debug\Assistive.exe.embed.manifest.res
          Debug\Assistive.obj
-         Debug\Controller.obj
          Debug\Gesture.obj
          Debug\State.obj
          Debug\stateFunDeclarations.obj
@@ -30,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.07
+Time Elapsed 00:00:04.82

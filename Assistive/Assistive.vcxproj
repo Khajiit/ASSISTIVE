@@ -80,7 +80,6 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Controller.hpp" />
     <ClInclude Include="Gesture.hpp" />
     <ClInclude Include="State.hpp" />
     <ClInclude Include="stateFunDeclarations.hpp" />
@@ -91,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assistive.cpp" />
-    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Gesture.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="stateFunDeclarations.cpp" />

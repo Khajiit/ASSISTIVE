@@ -14,7 +14,6 @@ public:
 	void moveForward();
 	void moveBackwards();
 	std::vector <State> stany;
-	State& findState(int value1, int value2);
 	int getMainPos();
 	int getSubPos();
 private:

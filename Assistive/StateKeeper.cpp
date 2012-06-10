@@ -161,7 +161,6 @@ State* StateKeeper::GetState()
 			return &(*it);
 	}
 	return 0;
-	//return findState(mainPos, subPos);
 }
 
 // zmiana stanu
@@ -176,27 +175,9 @@ void StateKeeper::ChangeState(int value1, int value2)
 		{
 			mainPos = value1;
 			subPos = value2;
-			/*curr.setcols(it->getSubPos());
-			curr.setrows(it->getMainPos());
-			curr.setname(it->getname());
-			curr.setfunc(it->getfunc());*/
 		}
 
 	}
-}
-
-State& StateKeeper::findState(int value1, int value2) 
-{
-
-	for(std::vector<State>::iterator it = stany.begin(); it != stany.end(); ++it) 
-	{
-		//if ( ( value1 == it->getMainPos() ) && ( value2 == it->getSubPos() ))
-		//{
-			return *it;
-		//}
-	}
-
-	//return 0;
 }
 
 int StateKeeper::getMainPos()
